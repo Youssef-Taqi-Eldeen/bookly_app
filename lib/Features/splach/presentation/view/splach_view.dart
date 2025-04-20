@@ -6,6 +6,8 @@ class SplachView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SplachViewBody();
+    return const Scaffold(
+      body: SplachViewBody(),
+    );
   }
 }
