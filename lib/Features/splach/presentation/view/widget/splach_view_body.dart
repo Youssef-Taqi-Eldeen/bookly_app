@@ -17,25 +17,22 @@ class _SplachViewBodyState extends State<SplachViewBody>
   late Animation<Offset> slidingAnimation;
 
   @override
-  void dispose() {
-    super.dispose();
-    animationController.dispose();
-  }
-
-  @override
   void initState() {
     super.initState();
-
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
     );
-
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
-
     animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
   }
 
   @override
@@ -48,7 +45,7 @@ class _SplachViewBodyState extends State<SplachViewBody>
         const SizedBox(
           height: 4,
         ),
-        SlidingText(slidingAnimation: slidingAnimation)
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
