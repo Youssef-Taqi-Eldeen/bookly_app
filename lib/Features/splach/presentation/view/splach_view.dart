@@ -1,4 +1,4 @@
-import 'package:bookly/Features/splach/presentation/view/widget/splach_view_body.dart';
+import 'package:bookly/Features/Splach/presentation/view/widget/splach_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SplachView extends StatelessWidget {
