@@ -2,7 +2,6 @@ import 'package:bookly/Features/home/presentation/view/widget/custom_app_bar.dar
 import 'package:bookly/Features/home/presentation/view/widget/featured_book_list_view.dart';
 import 'package:bookly/core/utils/asstes.dart';
 import 'package:bookly/core/utils/style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -11,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: 18),
+      padding: EdgeInsets.only(left: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,13 +18,15 @@ class HomeViewBody extends StatelessWidget {
           FeaturedBooksListView(),
           Padding(
             padding: EdgeInsets.only(
-              top: 50,
-              left: 12,
+              top: 35,
             ),
             child: Text(
               'Best Seller',
               style: Style.textStyle18,
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           BestSellerListViewItem(),
         ],
@@ -57,6 +58,22 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          const SizedBox(
+            width: 30,
+          ),
+          Column(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .5,
+                child: const Text(
+                  'Harry Potter and the Goblet of Fire',
+                  style: Style.textStyle20,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ),
         ],
       ),
