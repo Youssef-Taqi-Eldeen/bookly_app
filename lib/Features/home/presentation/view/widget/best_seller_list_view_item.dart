@@ -1,9 +1,7 @@
 import 'package:bookly/Features/home/presentation/view/widget/book_rating.dart';
 import 'package:bookly/core/utils/asstes.dart';
 import 'package:bookly/core/utils/style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({
