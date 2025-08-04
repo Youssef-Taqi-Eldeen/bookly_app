@@ -22,7 +22,7 @@ class HomeRepoImpl extends HomeRepo {
       return right(books);
     } catch (e) {
       return left(
-        ServerFailure(),
+        ServerFailure('errMessage'),
       );
     }
   }
@@ -41,7 +41,7 @@ class HomeRepoImpl extends HomeRepo {
       return right(books);
     } catch (e) {
       return left(
-        ServerFailure(),
+        ServerFailure('errMessage'),
       );
     }
   }
