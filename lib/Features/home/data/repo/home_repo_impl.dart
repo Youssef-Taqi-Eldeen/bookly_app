@@ -15,17 +15,34 @@ class HomeRepoImpl extends HomeRepo {
           endUrl: 'Filtering=free-ebooks&q=subject:programming&Sorting=newest');
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        books.add(
+          BookModel.fromJson(item),
+        );
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      return left(
+        ServerFailure(),
+      );
     }
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      var data = await apiService.get(
+          endUrl: 'Filtering=free-ebooks&q=subject:programming');
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(
+          BookModel.fromJson(item),
+        );
+      }
+      return right(books);
+    } catch (e) {
+      return left(
+        ServerFailure(),
+      );
+    }
   }
 }
